@@ -9,15 +9,19 @@ Having installed Node 16 or higher
 
 ### How to run the page
 
-to start the page in dev enviroment
+To start the page in dev enviroment
 ```
 git clone https://github.com/JuaMateu/millenial-store.git   
 cd millenial-store  
 npm i   
 npm run dev
 ```
+Go to [http://localhost:8080](http://localhost:8080)   
+If you want to change the port:  
+1. Go to /vite.config.js   
+2. Edit "port" property in server object
 
-### build and preview
+### Build and preview commands
 
-npm build
+npm build  
 npm preview
