@@ -1,27 +1,46 @@
 # Millenial-store
-React + vite store project with Firebase DB    
-Coderhouse react course
+
+React store project with Firebase DB    
+This is a Coderhouse react course done By Juan M. Mateu Arroyo
+
+We will use:
+- React 
+- Vite for development and building
+- Tailwind CSS for styling 
+- Firebase Database
+
 
 ### Requirements
 
 Having installed Node 16 or higher    
 [Download Node.js 18 ](https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi)
 
-### How to run the page
+### How to serve the page for development
 
-To start the page in dev enviroment
+To start the page in dev enviroment run these commands:
+
+1. Clone the repo
 ```
 git clone https://github.com/JuaMateu/millenial-store.git   
-cd millenial-store  
+cd millenial-store
+```
+2. In the project's folder run the following commands
+```  
 npm i   
 npm run dev
 ```
-Go to [http://localhost:8080](http://localhost:8080)   
-If you want to change the port:  
-1. Go to /vite.config.js   
-2. Edit "port" property in server object
+3. Now the page is served at: [http://localhost:3000](http://localhost:3000)   
+If you need to change the port:  
+   1. Go to __/vite.config.js__. 
+   2. Edit __"port"__ property in server object
 
-### Build and preview commands
-
+### Build and preview commands 
+To generate the dist package and preview:       
 npm build  
 npm preview
+
+### This project uses Tailwind CSS
+
+To install Tailwind CSS with Vite, follow the official [installation guide](https://tailwindcss.com/docs/guides/vite)   
+
+
