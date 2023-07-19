@@ -1,16 +1,19 @@
 # Black HW - Ecommerce
 
 React store project with Firebase DB    
-This is a Coderhouse react course done By **Juan M. Mateu Arroyo**
+This is a Coderhouse react course done By **Juan M. Mateu Arroyo**. 
+Building a responsive (mobile first) front end of an imaginary Hardware Store named "Black HW"
 
-This is the Fontend of a Hardware Store named Black HW
-
-We will use:
+Dependencies and technologys used:
 - React 
 - Vite for development and building
-- Tailwind CSS for styling 
 - Firebase Database
-
+- Tailwind CSS for styling (utility-first CSS)
+- Postcss (Needed for Tailwind)
+- DaisyUI for components and Layout
+- Eslinter
+- Autoprefixer
+- React-icons
 
 ### Requirements
 

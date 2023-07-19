@@ -1,27 +1,15 @@
+import Footer from "./Components/Footer/Footer";
 import ItemListConteiner from "./Components/ItemListConteiner/ItemListConteiner";
 import NavBar from "./Components/NavBar/NavBar";
 
-// import Home from './Screens/Home'
-// import Shop from './Screens/Shop'
-// import Contact from './Screens/Contact'
-// import AboutUs from './Screens/AboutUs'
-
-// import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
     <div className="font-[Poppins] bg-primary text-grey">
-        <NavBar />
-      {/* <Router>
-        <Routes>
-          <Route exact path='/' element={<Home />} /> }
-          <Route exact path='/shop' element={<Shop />} />
-          <Route exact path='/about-us' element={<AboutUs />} />
-          <Route exact path='/contact' element={<Contact />} />
-        </Routes>
+      <NavBar />
 
-    </Router> */}
       <ItemListConteiner greeting={"Bienvenidos a Black Hardware"} />
+      <Footer />
     </ div>
   );
 }
