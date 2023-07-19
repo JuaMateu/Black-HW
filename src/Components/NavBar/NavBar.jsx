@@ -5,18 +5,18 @@ const Navbar = () => {
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-primary font-[Poppins] text-grey drop-shadow-2xl items-center md:mx-24">
-      <div className="flex justify-around items-center">
+    <nav className="bg-primary sticky top-0 shadow-sm shadow-secondary">
+      <div className="flex justify-around items-center md:mx-24">
         {/* logo */}
-        <li className="text-2xl font-extrabold px-6  py-2 cursor-pointer flex">
+        <h3 className="flex text-2xl font-extrabold p-6 cursor-pointer">
           Black <span className="text-terciary">HW</span>
-        </li>
+        </h3>
         {/* navlinks */}
-        <ul className="hidden md:flex">
-          <li className="group w-auto text-lg px-8 py-2 mx-2 font-extrabold hover:bg-secondary hover:border-b-2 hover:border-b-white border-b-transparent border-b-2 cursor-pointer ">
+        <ul className="flex font-extrabold text-lg">
+          <li className="group p-6 hover:bg-secondary hover:border-b-2 hover:border-b-white border-b-transparent border-b-2 cursor-pointer">
             Categorías
-            <div className="bg-transparent absolute hover:block group-hover:block w-[800px] h-7">
-              <ul className="hidden hover:block absolute rounded-lg  group-hover:grid top-6 w-[600px] p-2 mx-auto grid-cols-3 gap-2 font-normal bg-secondary ">
+            <div className="hidden absolute hover:block group-hover:block w-40 h-20">
+              <ul className="hidden absolute rounded-lg group-hover:grid top-10 -left-10 w-[600px] p-2  grid-cols-3 gap-2 font-normal bg-secondary ">
                 <li className="hover:text-terciary hover:bg-primary p-2">Motherboards</li>
                 <li className="hover:text-terciary hover:bg-primary p-2">Memorias RAM</li>
                 <li className="hover:text-terciary hover:bg-primary p-2">Procesadores</li>
@@ -29,10 +29,10 @@ const Navbar = () => {
               </ul>
             </div>
           </li>
-          <li className="text-lg px-8 py-2 mx-2 font-extrabold hover:bg-secondary hover:border-b-2 cursor-pointer ">
+          <li className="p-6 hover:bg-secondary hover:border-b-2 hover:border-b-white border-b-transparent border-b-2 cursor-pointer ">
             Sobre Nostoros
           </li>
-          <li className="text-lg px-8 py-2 mx-2 font-extrabold hover:bg-secondary hover:border-b-2 cursor-pointer ">
+          <li className="p-6 hover:bg-secondary hover:border-b-2 hover:border-b-white border-b-transparent border-b-2 cursor-pointer">
             Contacto
           </li>
         </ul>

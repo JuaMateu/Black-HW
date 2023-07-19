@@ -1,6 +1,5 @@
-
-import ItemListConteiner from './Components/ItemListConteiner/ItemListConteiner'
-import NavBar from './Components/NavBar/NavBar'
+import ItemListConteiner from "./Components/ItemListConteiner/ItemListConteiner";
+import NavBar from "./Components/NavBar/NavBar";
 
 // import Home from './Screens/Home'
 // import Shop from './Screens/Shop'
@@ -11,11 +10,9 @@ import NavBar from './Components/NavBar/NavBar'
 
 function App() {
   return (
-    <div className='bg-primary'>
-      <header>
+    <div className="font-[Poppins] bg-primary text-grey">
         <NavBar />
-      </header>
-    {/* <Router>
+      {/* <Router>
         <Routes>
           <Route exact path='/' element={<Home />} /> }
           <Route exact path='/shop' element={<Shop />} />
@@ -25,8 +22,8 @@ function App() {
 
     </Router> */}
       <ItemListConteiner greeting={"Bienvenidos a Black Hardware"} />
-    </div>
+    </ div>
   );
 }
 
-export default App
+export default App;
