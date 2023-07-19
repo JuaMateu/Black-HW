@@ -1,7 +1,9 @@
-# Millenial-store
+# Black HW - Ecommerce
 
 React store project with Firebase DB    
-This is a Coderhouse react course done By Juan M. Mateu Arroyo
+This is a Coderhouse react course done By **Juan M. Mateu Arroyo**
+
+This is the Fontend of a Hardware Store named Black HW
 
 We will use:
 - React 
