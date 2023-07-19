@@ -1,11 +1,16 @@
 const ItemListConteiner = ({ greeting }) => {
   return (
-    <section className="h-screen">
-        <div className="flex flex-col justify-center text-center h-4/6 bg-Hero">
-          <h2 className="text-white text-2xl font-medium ">Despegá en tus partidas</h2>
-          <h1 className="md:text-5xl text-3xl text-white font-semibold py-5">{greeting}</h1>
+    <div className="hero min-h-screen bg-Hero">
+      <div className="hero-overlay bg-opacity-30"></div>
+      <div className="hero-content text-center text-grey">
+        <div className="max-w-md">
+          <h1 className="mb-5 text-5xl font-bold ">{greeting}</h1>
+          <p className="mb-5 text-grey">Despegá en tus partidas con los mejores componentes de BlackHW. Asesorate para armar tu equipo a medida</p>
+          <button className="btn bg-terciary text-black font-bold hover:bg-primary hover:text-terciary">Comprar</button>
+        </div>
       </div>
-    </section>
+    </div>
+
   );
 }
 
