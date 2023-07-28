@@ -26,8 +26,8 @@ To start the page in dev enviroment run these commands:
 
 1. Clone the repo
 ```
-git clone https://github.com/JuaMateu/millenial-store.git   
-cd millenial-store
+git clone https://github.com/JuaMateu/Black-HW.git   
+cd Black-HW
 ```
 2. In the project's folder run the following commands
 ```  
