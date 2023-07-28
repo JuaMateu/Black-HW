@@ -19,5 +19,20 @@ export default {
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          "primary": "#38BDF8",
+          "secondary": "0F172A",
+          "accent": "#1E293B",
+          "neutral": "#D7DDE6",
+          "base-100": "#1E293B",
+        },
+      },
+      "dark",
+      "cupcake",
+    ],
+  },
 }
 

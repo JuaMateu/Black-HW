@@ -1,15 +1,34 @@
-const ItemListConteiner = ({ greeting }) => {
+import ItemList from "./ItemList"
+import { useEffect, useState } from 'react';
+
+const ItemListConteiner = () => {
+  const [data, setData] = useState([]);
+
+  async function fetchingProductos() {
+    try {
+      const response = await fetch('https://fakestoreapi.com/products/category/electronics');
+      const data = await response.json();
+      return data
+    } catch (error) {
+      console.error(error)
+      return []
+    }
+  }
+  
+  useEffect(() => {
+    async function fetchData() {
+      const data = await fetchingProductos();
+      setData(data);
+    }
+    fetchData();
+  }, []);
+
+  console.log(data)
+
   return (
-    <div className="hero min-h-screen bg-Hero">
-      <div className="hero-overlay bg-opacity-30"></div>
-      <div className="hero-content text-center text-grey">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold ">{greeting}</h1>
-          <p className="mb-5 text-grey">Despegá en tus partidas con los mejores componentes de BlackHW. Asesorate para armar tu equipo a medida</p>
-          <button className="btn bg-terciary text-black font-bold hover:bg-primary hover:text-terciary">Comprar</button>
-        </div>
-      </div>
-    </div>
+      <section className="bg-primary my-4">
+        <ItemList products={data} ></ItemList>
+      </section>
 
   );
 }
