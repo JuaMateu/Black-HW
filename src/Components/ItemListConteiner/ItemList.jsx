@@ -1,10 +1,10 @@
-import ItemDetail from "./ItemDetail"
+import Item from "./Item"
 
 const ItemList = ({products}) => {
   return (
-    <section className="md:justify-center md:grid md:grid-cols-4 flex flex-col min-h-screen items-center gap-6">
+    <section className="bg-primary mx-40 my-8 md:justify-center md:grid md:grid-cols-4 flex flex-col min-h-screen items-center gap-10">
         {products.map((prod, index) => (
-            <ItemDetail key={index} item={prod}></ItemDetail>
+            <Item key={index} item={prod}></Item>
         ))}
     </ section>
   )
