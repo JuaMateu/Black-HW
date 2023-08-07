@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
@@ -8,7 +8,9 @@ const Home = () => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold ">Bienvenidos a Black Hw</h1>
                     <p className="mb-5 text-grey">Despegá en tus partidas con los mejores componentes de BlackHW. Asesorate para armar tu equipo a medida</p>
-                    <button className="btn bg-terciary text-black font-bold hover:bg-primary hover:text-terciary">Comprar</button>
+                    <Link to="/shop">
+                        <button className="btn bg-terciary text-black font-bold hover:bg-primary hover:text-terciary">Comprar</button>
+                    </Link>
                 </div>
             </div>
         </div>
