@@ -48,4 +48,6 @@ npm preview
 
 To install Tailwind CSS with Vite, follow the official [installation guide](https://tailwindcss.com/docs/guides/vite)   
 
+### Pre-entrega2
+![preentrega2-juanmateu](https://github.com/JuaMateu/Black-HW/assets/98904729/62af35a2-b3d1-4348-991b-0f73279d606b)
 
