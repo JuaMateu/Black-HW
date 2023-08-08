@@ -26,8 +26,8 @@ To start the page in dev enviroment run these commands:
 
 1. Clone the repo
 ```
-git clone https://github.com/JuaMateu/millenial-store.git   
-cd millenial-store
+git clone https://github.com/JuaMateu/Black-HW.git   
+cd Black-HW
 ```
 2. In the project's folder run the following commands
 ```  
@@ -48,4 +48,6 @@ npm preview
 
 To install Tailwind CSS with Vite, follow the official [installation guide](https://tailwindcss.com/docs/guides/vite)   
 
+### Pre-entrega2
+![preentrega2-juanmateu](https://github.com/JuaMateu/Black-HW/assets/98904729/62af35a2-b3d1-4348-991b-0f73279d606b)
 

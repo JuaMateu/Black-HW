@@ -1,8 +1,23 @@
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+
+    const categories = [
+        { id: 1, name: "motherboards" },
+        { id: 2, name: "Memorias Ram" },
+        { id: 3, name: "Procesadores" },
+        { id: 4, name: "Almacenamiento" },
+        { id: 5, name: "Fuentes" },
+        { id: 6, name: "Gabinetes" },
+        { id: 7, name: "Refrigeracion" },
+        { id: 8, name: "Monitores" },
+        { id: 9, name: "Accesorios" },
+    ]
+
+
     return (
-        <nav className="navbar sticky top-0 bg-primary z-50 shadow-lg shadow-secondary">
+        <nav className="navbar sticky top-0 lg:px-32 bg-primary z-50 shadow-lg shadow-secondary">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -26,93 +41,56 @@ const NavBar = () => {
                         className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-secondary rounded-box w-52"
                     >
                         <li>
+                            <Link to="/shop">shop </ Link>
+                        </li>
+                        <li>
+
                             <details>
                                 <summary>Categorías</summary>
                                 <ul className="p-2 ">
-                                    <li>
-                                        <a>Motherboards</a>
-                                    </li>
-                                    <li>
-                                        <a>Memorias RAM</a>
-                                    </li>
-                                    <li>
-                                        <a>Procesadores</a>
-                                    </li>
-                                    <li>
-                                        <a>Almacenamiento</a>
-                                    </li>
-                                    <li>
-                                        <a>Fuentes</a>
-                                    </li>
-                                    <li>
-                                        <a>Gabinetes</a>
-                                    </li>
-                                    <li>
-                                        <a>Refrigeracion</a>
-                                    </li>
-                                    <li>
-                                        <a>Monitores</a>
-                                    </li>
-                                    <li>
-                                        <a>Accesorios</a>
-                                    </li>
+                                    {categories.map((cat, index) => (
+                                        <li key={index}>
+                                            <Link to={`/categories/${cat.id}`}> {cat.name} </ Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </details>
                         </li>
                         <li>
-                            <a>Sobre Nostoros</a>
+                            <Link to="/aboutus">Sobre Nostoros </ Link>
                         </li>
                         <li>
-                            <a>Contacto</a>
+                            <Link to="/contact">Contacto </ Link>
                         </li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost  normal-case text-xl">
+                <Link to="/" className="btn btn-ghost  normal-case text-xl">
                     Black<span className="text-terciary">Hw</span>
-                </a>
+                </Link>
             </div>
             {/* large screens navbar */}
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li>
+                        <Link to="/shop">Shop </ Link>
+                    </li>
+                    <li>
                         <details>
                             <summary >Categorías</summary>
                             <ul className="grid grid-cols-2 w-80 bg-secondary">
-                                <li>
-                                    <a>Motherboards</a>
-                                </li>
-                                <li>
-                                    <a>Memorias RAM</a>
-                                </li>
-                                <li>
-                                    <a>Procesadores</a>
-                                </li>
-                                <li>
-                                    <a>Almacenamiento</a>
-                                </li>
-                                <li>
-                                    <a>Fuentes</a>
-                                </li>
-                                <li>
-                                    <a>Gabinetes</a>
-                                </li>
-                                <li>
-                                    <a>Refrigeracion</a>
-                                </li>
-                                <li>
-                                    <a>Monitores</a>
-                                </li>
-                                <li>
-                                    <a>Accesorios</a>
-                                </li>
+                                {categories.map((cat, index) => (
+                                    <li key={index}>
+                                        <Link to={`/categories/${cat.id}`}> {cat.name} </ Link>
+                                    </li>
+                                ))}
                             </ul>
                         </details>
                     </li>
                     <li>
-                        <a>Sobre Nostoros</a>
+                        <Link to="/aboutus">Sobre Nostoros </ Link>
                     </li>
                     <li>
-                        <a>Contacto</a>
+                        <Link to="/contact">Contacto </ Link>
                     </li>
                 </ul>
             </div>

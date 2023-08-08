@@ -1,17 +1,35 @@
-const ItemListConteiner = ({ greeting }) => {
+import ItemList from "./ItemList";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getProducts } from "../../Data/products";
+
+const ItemListConteiner = () => {
+  const [products, setProducts] = useState([]);
+  const { category } = useParams();
+
+  useEffect(() => {
+    getProducts()
+      .then((res) => {
+        setProducts(res);
+      })
+      .catch((error) => {
+        console.error(error);
+  }, [])
+    });
+
+  let filtredProducts = ""
+  if (category != undefined) {
+    filtredProducts = products.filter((prod) => prod.categoryid == category)
+  } else {
+    filtredProducts = products
+  }
+
+
   return (
-    <div className="hero min-h-screen bg-Hero">
-      <div className="hero-overlay bg-opacity-30"></div>
-      <div className="hero-content text-center text-grey">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold ">{greeting}</h1>
-          <p className="mb-5 text-grey">Despegá en tus partidas con los mejores componentes de BlackHW. Asesorate para armar tu equipo a medida</p>
-          <button className="btn bg-terciary text-black font-bold hover:bg-primary hover:text-terciary">Comprar</button>
-        </div>
-      </div>
-    </div>
-
+    <>
+      <ItemList products={filtredProducts}></ItemList>
+    </>
   );
-}
+};
 
-export default ItemListConteiner
+export default ItemListConteiner;
