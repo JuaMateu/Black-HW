@@ -1,5 +1,5 @@
 import ItemList from "./ItemList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../Data/products";
 
@@ -7,13 +7,14 @@ const ItemListConteiner = () => {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
 
-
-  getProducts()
-    .then((res) => {
-      setProducts(res);
-    })
-    .catch((error) => {
-      console.error(error);
+  useEffect(() => {
+    getProducts()
+      .then((res) => {
+        setProducts(res);
+      })
+      .catch((error) => {
+        console.error(error);
+  }, [])
     });
 
   let filtredProducts = ""

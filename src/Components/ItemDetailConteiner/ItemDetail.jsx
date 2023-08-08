@@ -15,6 +15,7 @@ const ItemDetail = ({ product }) => {
                 <h2 className="text-4xl font-semibold m-3 text-terciary">$ {product.price}</h2>
                 <p > {product.description}</p>
                 <p > Categoria: {product.categoryName}</p>
+                <p > stock: {product.stock}</p>
                 <ItemCount initial={0} onAdd={(quantity) => console.log(`Cantidad agregada: ${quantity}`)}></ItemCount>
             </div>
         </ section>
