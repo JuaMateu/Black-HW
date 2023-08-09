@@ -23,7 +23,7 @@ const ItemDetailCointeiner = () => {
 
     return (
         <>
-        {product !== undefined ? <ItemDetail product={product} /> : <h1 className='h-[100vh] w-full leading-[100vh] text-center align-middle'>Cargando...</h1>}
+        {product !== undefined ? <ItemDetail {...product} /> : <h1 className='h-[100vh] w-full leading-[100vh] text-center align-middle'>Cargando...</h1>}
         </>
     )
 }
