@@ -1,7 +1,21 @@
 
 import ItemCount from "../ItemCount"
+import { CartContext } from "../../context/cartContext"
+import { useContext, useState } from "react"
 
-const ItemDetail = ({ img, title, price, description, categoryName, stock }) => {
+const ItemDetail = ({ id, img, title, price, description, categoryName, stock }) => {
+
+    // const [quantityAdded, setQuantityAdded] = useState(0)
+
+    const { addItem, cart } = useContext(CartContext)
+    
+    const handleOnAdd = (quantity) => {
+        // setQuantityAdded(quantity)
+        const item = { id, title, price }
+
+        addItem(quantity, item)
+        console.log(cart)
+    }
 
     return (
         <section className="flex bg-primary h-[100vh] m-20">
@@ -16,7 +30,7 @@ const ItemDetail = ({ img, title, price, description, categoryName, stock }) => 
                 <p > {description}</p>
                 <p > Categoria: {categoryName}</p>
                 <p > stock: {stock}</p>
-                <ItemCount initial={1} onAdd={(quantity) => console.log(`Cantidad agregada: ${quantity}`)}></ItemCount>
+                <ItemCount initial={1} onAdd={handleOnAdd}/>
             </div>
         </ section>
     )
