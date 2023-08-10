@@ -7,13 +7,12 @@ import ItemDetail from './itemDetail';
 const ItemDetailCointeiner = () => {
     const [product, setProduct] = useState();
 
-    const {id} = useParams()
- 
+    const { id } = useParams()
+
     useEffect(() => {
         getProductById(id)
             .then(res => {
                 setProduct(res);
-                console.log(res)
             })
             .catch(error => {
                 console.error(error);
@@ -23,7 +22,7 @@ const ItemDetailCointeiner = () => {
 
     return (
         <>
-        {product !== undefined ? <ItemDetail {...product} /> : <h1 className='h-[100vh] w-full leading-[100vh] text-center align-middle'>Cargando...</h1>}
+            {product ? <ItemDetail {...product} /> : <h1 className='h-[100vh] w-full leading-[100vh] text-center align-middle'>Cargando...</h1>}
         </>
     )
 }

@@ -14,20 +14,17 @@ const ItemListConteiner = () => {
       })
       .catch((error) => {
         console.error(error);
-  }, [])
-    });
+      }, [])
+  });
 
-  let filtredProducts = ""
-  if (category != undefined) {
-    filtredProducts = products.filter((prod) => prod.categoryid == category)
-  } else {
-    filtredProducts = products
-  }
+
+  let filtredProducts = products.filter((prod) => prod.categoryid == category)
+
 
 
   return (
     <>
-      <ItemList products={filtredProducts}></ItemList>
+      {category ? <ItemList products={filtredProducts} /> : <ItemList products={products} />}
     </>
   );
 };
