@@ -2,19 +2,20 @@
 import ItemCount from "../ItemCount"
 import { CartContext } from "../../context/cartContext"
 import { useContext, useState } from "react"
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ id, img, title, price, description, categoryName, stock }) => {
 
-    // const [quantityAdded, setQuantityAdded] = useState(0)
+    const [quantityAdded, setQuantityAdded] = useState(0)
 
-    const { addItem, cart } = useContext(CartContext)
-    
+    const { addItem } = useContext(CartContext)
+
     const handleOnAdd = (quantity) => {
         // setQuantityAdded(quantity)
-        const item = { id, title, price }
+        const item = { id, img, title, price }
+        setQuantityAdded(quantity)
 
         addItem(quantity, item)
-        console.log(cart)
     }
 
     return (
@@ -30,7 +31,16 @@ const ItemDetail = ({ id, img, title, price, description, categoryName, stock })
                 <p > {description}</p>
                 <p > Categoria: {categoryName}</p>
                 <p > stock: {stock}</p>
-                <ItemCount initial={1} onAdd={handleOnAdd}/>
+                {
+                    quantityAdded > 0 ? (
+                        <Link to='/cart' className='mx-auto'>
+                            <button className="btn btn-primary mt-3">Terminar compra</button>
+                        </Link>
+                    ) :
+                        (
+                            <ItemCount initial={1} onAdd={handleOnAdd} />
+                        )
+                }
             </div>
         </ section>
     )
