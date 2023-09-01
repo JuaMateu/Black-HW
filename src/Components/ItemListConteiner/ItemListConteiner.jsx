@@ -1,24 +1,29 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../Data/products";
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from "/src/services/firebase/firebaseConfig.js"
 
 const ItemListConteiner = () => {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
-
+  const [filtredProducts, setfiltredProducts] = useState([]);
+  console.log(products)
   useEffect(() => {
-    getProducts()
-      .then((res) => {
-        setProducts(res);
-      })
-      .catch((error) => {
-        console.error(error);
-      }, [])
-  });
 
 
-  let filtredProducts = products.filter((prod) => prod.categoryid == category)
+    const itemsCollection = collection(db, "productos")
+    getDocs(itemsCollection).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => doc.data())
+      setProducts(docs)
+      const filtered = docs.filter((prod) => prod.categoryId == category);
+      setfiltredProducts(filtered);
+
+    })
+
+  }, [category]);
+
+
 
 
 
