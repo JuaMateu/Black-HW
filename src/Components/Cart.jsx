@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-    const { cart, removeItem, precioTotal } = useContext(CartContext)
+    const { cart, removeItem, precioTotal, clearCart } = useContext(CartContext)
     console.log(cart)
 
     // const removeItemHandler = (id) => {
@@ -61,6 +61,9 @@ const Cart = () => {
                         </table>
                     </div>
                     <div className="mr-32">
+                    <button onClick={()=> clearCart()}className="btn mt-3 mx-auto w-40">
+                        vaciar carrito
+                    </button>
                         <h1 className="w-full text-2xl my-12  text-right">Total de compra: $ <span className="text-terciary font-bold">{precioTotal}</span> </h1>
                     </div>
                     <div className="flex flex-col justify-center items-center">

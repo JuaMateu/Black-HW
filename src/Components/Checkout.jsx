@@ -10,7 +10,7 @@ const Checkout = () => {
     const [orderId, setOrderId] = useState(null);
     const [orderSent, setOrderSent] = useState(false);
 
-    const { cart, precioTotal } = useContext(CartContext);
+    const { cart, precioTotal, clearCart } = useContext(CartContext);
     const items = cart.map((item) => {
         return {
             id: item.id,
@@ -64,6 +64,7 @@ const Checkout = () => {
             addDoc(ordersCollection, order).then(({ id }) => {
                 setOrderId(id);
                 setOrderSent(true);
+                clearCart()
             });
         }
     };
