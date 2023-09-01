@@ -9,8 +9,10 @@ const ItemListConteiner = () => {
   const { category } = useParams();
   const [filtredProducts, setfiltredProducts] = useState([]);
   console.log(products)
-  useEffect(() => {
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    setLoading(true);
 
     const itemsCollection = collection(db, "productos")
     getDocs(itemsCollection).then((snapshot) => {
@@ -18,9 +20,8 @@ const ItemListConteiner = () => {
       setProducts(docs)
       const filtered = docs.filter((prod) => prod.categoryId == category);
       setfiltredProducts(filtered);
-
+      setLoading(false); // Cambia el estado de carga una vez que los productos se han cargado
     })
-
   }, [category]);
 
 
@@ -28,9 +29,15 @@ const ItemListConteiner = () => {
 
 
   return (
-    <>
-      {category ? <ItemList products={filtredProducts} /> : <ItemList products={products} />}
-    </>
+    <div className="relative h-screen flex justify-center items-center">
+      {loading ? (
+        <span className="loading loading-ring loading-lg text-center align-middle absolute"></span>
+      ) : (
+        <>
+          {category ? <ItemList products={filtredProducts} /> : <ItemList products={products} />}
+        </>
+      )}
+    </div>
   );
 };
 

@@ -23,7 +23,7 @@ const ItemDetailCointeiner = () => {
 
     return (
         <>
-            {product ? <ItemDetail {...product} /> : <h1 className='h-[100vh] w-full leading-[100vh] text-center align-middle'>Cargando...</h1>}
+            {product ? <ItemDetail {...product} /> : <span className="loading loading-ring loading-lg text-center align-middle absolute"></span> }
         </>
     )
 }

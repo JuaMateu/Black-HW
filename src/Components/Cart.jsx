@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-    const { cart, removeItem } = useContext(CartContext)
+    const { cart, removeItem, precioTotal } = useContext(CartContext)
     console.log(cart)
 
     // const removeItemHandler = (id) => {
     //     removeItem(id)
     // }
 
-    const precioTotal = cart.reduce((prev, prod) => {
-        const precioProd = prod.quantity * prod.price;
-        return prev + precioProd;
-    }, 0)
+    // const precioTotal = cart.reduce((prev, prod) => {
+    //     const precioProd = prod.quantity * prod.price;
+    //     return prev + precioProd;
+    // }, 0)
 
     return (
 
