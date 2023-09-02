@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '/src/services/firebase/firebaseConfig.js';
 import { CartContext } from '/src/context/cartContext';

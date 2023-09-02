@@ -29,7 +29,7 @@ const ItemListConteiner = () => {
 
 
   return (
-    <div className="relative h-screen flex justify-center items-center">
+    <div className="relative min-h-screen flex justify-center items-center">
       {loading ? (
         <span className="loading loading-ring loading-lg text-center align-middle absolute"></span>
       ) : (

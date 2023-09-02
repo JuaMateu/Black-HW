@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { CartContext } from "/src/context/cartContext"
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -8,14 +8,6 @@ const Cart = () => {
     const { cart, removeItem, precioTotal, clearCart } = useContext(CartContext)
     console.log(cart)
 
-    // const removeItemHandler = (id) => {
-    //     removeItem(id)
-    // }
-
-    // const precioTotal = cart.reduce((prev, prod) => {
-    //     const precioProd = prod.quantity * prod.price;
-    //     return prev + precioProd;
-    // }, 0)
 
     return (
 
