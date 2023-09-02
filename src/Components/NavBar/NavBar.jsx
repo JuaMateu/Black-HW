@@ -95,7 +95,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <CartWidget number={2} />
+                <CartWidget />
             </div>
         </nav>
     );

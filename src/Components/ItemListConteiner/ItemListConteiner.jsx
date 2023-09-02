@@ -1,34 +1,43 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../Data/products";
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from "/src/services/firebase/firebaseConfig.js"
 
 const ItemListConteiner = () => {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
+  const [filtredProducts, setfiltredProducts] = useState([]);
+  console.log(products)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts()
-      .then((res) => {
-        setProducts(res);
-      })
-      .catch((error) => {
-        console.error(error);
-  }, [])
-    });
+    setLoading(true);
 
-  let filtredProducts = ""
-  if (category != undefined) {
-    filtredProducts = products.filter((prod) => prod.categoryid == category)
-  } else {
-    filtredProducts = products
-  }
+    const itemsCollection = collection(db, "productos")
+    getDocs(itemsCollection).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => doc.data())
+      setProducts(docs)
+      const filtered = docs.filter((prod) => prod.categoryId == category);
+      setfiltredProducts(filtered);
+      setLoading(false); // Cambia el estado de carga una vez que los productos se han cargado
+    })
+  }, [category]);
+
+
+
 
 
   return (
-    <>
-      <ItemList products={filtredProducts}></ItemList>
-    </>
+    <div className="relative min-h-screen flex justify-center items-center">
+      {loading ? (
+        <span className="loading loading-ring loading-lg text-center align-middle absolute"></span>
+      ) : (
+        <>
+          {category ? <ItemList products={filtredProducts} /> : <ItemList products={products} />}
+        </>
+      )}
+    </div>
   );
 };
 
